@@ -28,10 +28,10 @@ num_reviews = soup.find_all('span', class_='sSHqwe uTUoTb XLC8M')[:5]
 for i in range(len(hotel_names)):
     review = num_reviews[i]
     wait = WebDriverWait(driver, 10)
-    menu_bt = wait.until(EC.element_to_be_clickable(
+    review_bt = wait.until(EC.element_to_be_clickable(
                            (By.XPATH, f"//span[contains(text(),'{review.text}')]"))
                        )
-    menu_bt.click()
+    review_bt.click()
     time.sleep(3)
 
 reviews = []
